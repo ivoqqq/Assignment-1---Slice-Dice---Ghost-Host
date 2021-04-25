@@ -1,5 +1,6 @@
 const HTML_EL = {
     header: () => document.querySelector("header"),
+    logoFilter: () => document.querySelector("feColorMatrix"),
     menuLinksNodeList: () => document.querySelectorAll(".link"),
     btn3d: () => document.querySelector(".btn-3d__sides"),
     btnOpen: () => document.querySelector(".btn-3d__side--open"),
@@ -45,7 +46,7 @@ const HTML_EL = {
             HTML_EL.desktopMenu().style.setProperty("--bottom", "-1rem");
             HTML_EL.btnOpen().style.color = "black";
             HTML_EL.btnOpen().style.borderColor = "black"
-            document.querySelector("feColorMatrix").attributes.values.value = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0";
+            HTML_EL.logoFilter().attributes.values.value = "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0";
         } else {
             HTML_EL.header().style.backgroundColor = "transparent";
             HTML_EL.header().style.boxShadow = "none";
@@ -54,7 +55,7 @@ const HTML_EL = {
             HTML_EL.desktopMenu().style.setProperty("--bottom", "-3.05rem");
             HTML_EL.btnOpen().style.borderColor = "white"
             HTML_EL.btnOpen().style.color = "white";
-            document.querySelector("feColorMatrix").attributes.values.value = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0";
+            HTML_EL.logoFilter().attributes.values.value = "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0";
         }
     }
 })();
