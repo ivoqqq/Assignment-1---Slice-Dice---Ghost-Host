@@ -1,0 +1,63 @@
+.btn-3d {
+  -webkit-perspective: 90rem;
+  -moz-perspective: 90rem;
+  perspective: 90rem;
+  position: fixed;
+  z-index: 5;
+  top: 2rem;
+  right: 1rem;
+  cursor: pointer;
+  height: 4rem;
+}
+
+.btn-3d__sides {
+  width: 8rem;
+  height: 4rem;
+  position: relative;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.btn-3d__side--open,
+.btn-3d__side--close {
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  border-radius: 2px;
+  display: table;
+  font-weight: 600;
+}
+
+.btn-3d__side--close {
+  font-size: 1.8rem;
+  background: rgb(83, 173, 109);
+  border: 2px solid black;
+  color: black;
+  -webkit-transform: rotateY(90deg) translateZ(4rem);
+  -moz-transform: rotateY(90deg) translateZ(4rem);
+  transform: rotateY(90deg) translateZ(4rem);
+}
+
+.btn-3d__side--open {
+  position: absolute;
+  font-size: 2.8rem;
+  background: rgb(120, 136, 149);
+  border: 2px solid white;
+  color: white;
+  -webkit-transform: translateX(2.1rem) translateZ(2rem);
+  -moz-transform: translateX(2.1rem) translateZ(2rem);
+  transform: translateX(2.1rem) translateZ(2rem);
+}
+
+.btn-3d__sides p{
+  line-height: 3rem;
+  display: table-cell;
+  vertical-align:middle;
+  text-align: center;
+}

@@ -1,0 +1,171 @@
+header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.logo-and-nav--container {
+    width: 75%;
+    height: 8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.desktop-nav {
+    --white: white;
+    --bottom: -3.05rem;
+    float: right;
+    width: 75%;
+    text-align: right;
+    color: var(--white);
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25rem;
+    height: 100%;
+    background-color: white;
+
+    -webkit-transform: translate(25rem, 0);
+    -moz-transform: translate(25rem, 0);
+    transform: translate(25rem, 0);
+
+    -webkit-transition: transform 0.2s ease-out;
+    -moz-transition: transform 0.2s ease-out;
+    -o-transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
+
+
+    opacity: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    overflow: auto;
+}
+
+.mobile-menu__routes {
+    margin-top: 10rem;
+    width: 30%;
+}
+
+/* =============================== */
+/* APPLY both desk and mobile menu */
+
+.link,
+.active {
+    text-decoration: none;
+    list-style-type: none;
+    color: inherit;
+    font-size: 1.6rem;
+    line-height: 8rem;
+    margin-left: 7%;
+    position: relative;
+    height: 8rem;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.2s ease-out;
+    -moz-transition: opacity 0.2s ease-out;
+    -o-transition: opacity 0.2s ease-out;
+    transition: opacity 0.2s ease;
+}
+
+.link:nth-child(1) {
+    margin-left: 0;
+}
+
+.active {
+    opacity: 1;
+}
+
+.link::after,
+.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: var(--bottom);
+    border-bottom: 1px solid var(--white);
+}
+
+.link::after {
+    width: 0;
+    left: 50%;
+    -webkit-transition: width 0.2s ease-out, left 0.2s ease-out,
+        border-color 0.2s ease-out;
+    -moz-transition: width 0.2s ease-out, left 0.2s ease-out,
+        border-color 0.2s ease-out;
+    -o-transition: width 0.2s ease-out, left 0.2s ease-out,
+        border-color 0.2s ease-out;
+    transition: width 0.2s ease-out, left 0.2s ease-out,
+        border-color 0.2s ease-out;
+}
+
+.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+.link:hover::after {
+    opacity: 1;
+    width: 100%;
+    left: 0;
+}
+
+
+@media only screen and (max-width: 950px) {
+    .logo-and-nav--container {
+        border: 0;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .link {
+        margin-left: 0;
+        font-size: 2rem;
+    }
+
+    .link::after,
+    .active::after {
+        bottom: -1rem;
+        border-bottom: 1px solid black;
+    }
+}
+
+
+@media only screen and (min-width: 950px) {
+    .desktop-nav {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+}
