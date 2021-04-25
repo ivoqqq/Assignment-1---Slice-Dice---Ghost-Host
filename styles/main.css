@@ -14,12 +14,6 @@ html {
     font-family: "Roboto";
 }
 
-.flex-kit {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: flex;
-}
-
 .main-container {
     color: white;
     background-color: rgb(17, 26, 26);
